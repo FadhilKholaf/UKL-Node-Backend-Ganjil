@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/:search", coffeeControllers.getAllCoffee);
+app.get("/image/:filename", coffeeControllers.getCoffeeImage);
 app.post(
   "/",
   upload.single("image"),
