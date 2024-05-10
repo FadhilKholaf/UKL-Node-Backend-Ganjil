@@ -133,14 +133,14 @@ exports.deleteCoffee = async (req, res) => {
 
 exports.getAllCoffee = async (req, res) => {
   try {
-    if (req.params) {
+    if (req.query) {
       await coffeeModel
         .findAll({
           where: {
             [Op.or]: {
-              name: { [Op.substring]: req.params.search },
-              size: { [Op.substring]: req.params.search },
-              price: { [Op.substring]: req.params.search },
+              name: { [Op.substring]: req.query.keyword },
+              size: { [Op.substring]: req.query.keyword },
+              price: { [Op.substring]: req.query.keyword },
             },
           },
         })

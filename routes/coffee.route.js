@@ -8,7 +8,7 @@ const upload = require("../controllers/upload-coffee-image");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/:search", coffeeControllers.getAllCoffee);
+app.get("/search", coffeeControllers.getAllCoffee);
 app.get("/image/:filename", coffeeControllers.getCoffeeImage);
 app.post(
   "/",
